@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<!-- Define que o documento usa HTML5 -->
+
+<html lang="pt-BR">
+<!-- Define o idioma principal da página como português do Brasil -->
+
+<head>
+  <!-- Configura a codificação dos caracteres para aceitar acentos -->
+  <meta charset="UTF-8" />
+
+  <!-- Faz a página se adaptar corretamente em celular, tablet e computador -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Título que aparece na aba do navegador -->
+  <title>Profile Card Page</title>
+
+  <!-- Importa o arquivo CSS externo responsável pelo visual da página -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Importa o JavaScript externo com defer para carregar depois do HTML -->
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <!-- Área principal da página -->
+  <main class="page">
+    
+    <!-- Texto lateral/introdução do projeto -->
+    <section class="intro">
+      <p class="intro__tag">Projeto 02 • GitHub Pages</p>
+
+      <h1>Profile Card Page</h1>
+
+      <p>
+        Uma página estática inspirada em um card de perfil dentro de um celular,
+        criada com HTML, CSS e JavaScript.
+      </p>
+    </section>
+
+    <!-- Celular principal: o JavaScript usa o id="phone" para aplicar o efeito de movimento -->
+    <section class="phone" id="phone" aria-label="Celular com card de perfil">
+      
+      <!-- Parte superior preta do celular, simulando a câmera/dynamic island -->
+      <div class="phone__island"></div>
+
+      <!-- Tela interna do celular -->
+      <div class="screen">
+
+        <!-- Barra superior com horário e ícones simples -->
+        <header class="status-bar">
+          <span>10:09</span>
+
+          <div class="status-bar__icons">
+            <span>●</span>
+            <span>⌁</span>
+            <span>▰</span>
+          </div>
+        </header>
+
+        <!-- Cabeçalho do aplicativo dentro do celular -->
+        <section class="app-header">
+          <h2 class="logo">Card</h2>
+
+          <!-- Botões decorativos do topo -->
+          <nav class="app-actions" aria-label="Ações do card">
+            <button type="button" aria-label="QR Code">▦</button>
+            <button type="button" aria-label="Compartilhar">⇧</button>
+            <button type="button" aria-label="Contatos">👥</button>
+            <button type="button" aria-label="Editar">✎</button>
+          </nav>
+        </section>
+
+        <!-- Linha com link fictício do perfil -->
+        <p class="profile-link">
+          <span>🌐</span>
+          card.cards/Denis_Martins
+          <button type="button" aria-label="Copiar link">⧉</button>
+        </p>
+
+        <!-- Card colorido principal -->
+        <article class="profile-card">
+          <h2>Denis Martins</h2>
+
+          <!-- Lista de contatos principais -->
+          <div class="contact-list">
+            <p>
+              <span class="contact-icon">☎</span>
+              <span>(11) 99999-9999</span>
+            </p>
+
+            <p>
+              <span class="contact-icon">✉</span>
+              <span>denis@email.com</span>
+            </p>
+
+            <p>
+              <span class="contact-icon">▶</span>
+              <span>@denis.dev</span>
+            </p>
+          </div>
+        </article>
+
+        <!-- Lista de links do perfil -->
+        <section class="links-list" aria-label="Links do perfil">
+
+          <!-- Cada item é um link. Depois você pode trocar o href="#" pelo link real -->
+          <a href="#" class="link-item">
+            <span class="link-icon portfolio">◇</span>
+            <strong>Meu Portfólio</strong>
+            <span class="arrow">›</span>
+          </a>
+
+          <a href="#" class="link-item">
+            <span class="link-icon instagram">IG</span>
+            <strong>@denis.martins</strong>
+            <span class="arrow">›</span>
+          </a>
+
+          <a href="#" class="link-item">
+            <span class="link-icon github">GH</span>
+            <strong>GitHub</strong>
+            <span class="arrow">›</span>
+          </a>
+
+          <a href="#" class="link-item">
+            <span class="link-icon linkedin">in</span>
+            <strong>LinkedIn</strong>
+            <span class="arrow">›</span>
+          </a>
+
+          <a href="#" class="link-item">
+            <span class="link-icon youtube">YT</span>
+            <strong>YouTube</strong>
+            <span class="arrow">›</span>
+          </a>
+        </section>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

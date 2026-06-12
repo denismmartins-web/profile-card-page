@@ -1,0 +1,477 @@
+/* Remove margens padrões e faz largura/altura serem calculadas de forma mais previsível */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Variáveis do projeto: ajudam a alterar cores e sombras em um só lugar */
+:root {
+  --bg-dark: #050713;
+  --text-light: #f8f9ff;
+  --text-muted: #b8bfd3;
+
+  --phone-border: #111827;
+  --screen-bg: #f4f6fb;
+
+  --shadow-strong: 0 35px 90px rgba(0, 0, 0, 0.55);
+  --shadow-soft: 0 14px 32px rgba(40, 52, 90, 0.16);
+}
+
+/* Corpo geral da página */
+body {
+  min-height: 100vh;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--text-light);
+  background:
+    radial-gradient(circle at 15% 20%, rgba(0, 153, 255, 0.22), transparent 34%),
+    radial-gradient(circle at 80% 75%, rgba(255, 72, 170, 0.20), transparent 32%),
+    linear-gradient(135deg, #03040a, var(--bg-dark));
+  overflow-x: hidden;
+}
+
+/* Container principal da página */
+.page {
+  width: min(1180px, 92%);
+  min-height: 100vh;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 470px;
+  align-items: center;
+  gap: 70px;
+  perspective: 1200px;
+}
+
+/* Bloco de texto lateral */
+.intro {
+  max-width: 500px;
+}
+
+/* Pequena etiqueta acima do título */
+.intro__tag {
+  display: inline-block;
+  margin-bottom: 16px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+/* Título principal */
+.intro h1 {
+  margin-bottom: 18px;
+  font-size: clamp(2.7rem, 6vw, 5.2rem);
+  line-height: 0.95;
+}
+
+/* Parágrafo da apresentação */
+.intro p {
+  font-size: 1.08rem;
+  line-height: 1.7;
+  color: var(--text-muted);
+}
+
+/* Estrutura externa do celular */
+.phone {
+  position: relative;
+
+  /* A largura foi aumentada para deixar o celular mais elegante */
+  width: min(455px, 94vw);
+
+  /* Altura mínima para parecer um smartphone comprido */
+  min-height: 835px;
+
+  /* Espaço entre a borda externa e a tela */
+  padding: 16px;
+
+  /* Borda escura do celular */
+  border: 9px solid var(--phone-border);
+
+  /* Arredondamento grande para imitar celular moderno */
+  border-radius: 62px;
+
+  /* Gradiente escuro da carcaça */
+  background:
+    linear-gradient(145deg, #273247, #06070c 45%, #151b28);
+
+  /* Sombra forte para dar profundidade */
+  box-shadow: var(--shadow-strong);
+
+  /* Permite o efeito 3D pelo JavaScript */
+  transform-style: preserve-3d;
+
+  /* Suaviza a volta do movimento */
+  transition: transform 0.18s ease;
+
+  /* Animação leve quando o mouse não está interagindo */
+  animation: phoneFloat 6s ease-in-out infinite;
+}
+
+/* Brilho fino na borda interna do celular */
+.phone::before {
+  content: "";
+  position: absolute;
+  inset: 10px;
+  border-radius: 52px;
+  pointer-events: none;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+/* Pequeno detalhe lateral simulando botão físico do celular */
+.phone::after {
+  content: "";
+  position: absolute;
+  right: -13px;
+  top: 270px;
+  width: 4px;
+  height: 95px;
+  border-radius: 999px;
+  background: #273247;
+  box-shadow: inset 0 0 4px rgba(255, 255, 255, 0.2);
+}
+
+/* Ilha/câmera superior do celular */
+.phone__island {
+  position: absolute;
+  top: 25px;
+  left: 50%;
+  z-index: 10;
+  width: 124px;
+  height: 35px;
+  border-radius: 999px;
+  background: #030305;
+  transform: translateX(-50%);
+  box-shadow:
+    inset 20px 0 35px rgba(255, 255, 255, 0.06),
+    0 4px 14px rgba(0, 0, 0, 0.35);
+}
+
+/* Tela interna clara do celular */
+.screen {
+  min-height: 800px;
+  padding: 36px 25px 30px;
+  border-radius: 48px;
+  color: #10131a;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 90% 0%, rgba(120, 183, 255, 0.20), transparent 28%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(239, 242, 249, 0.98));
+}
+
+/* Barra de status com horário e ícones */
+.status-bar {
+  height: 42px;
+  padding: 0 20px 0 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 700;
+  font-size: 1.08rem;
+}
+
+/* Ícones simples no topo direito */
+.status-bar__icons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.82rem;
+}
+
+/* Cabeçalho do app */
+.app-header {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logo "Card" com gradiente */
+.logo {
+  font-size: 3.15rem;
+  font-weight: 500;
+  letter-spacing: -3px;
+  background: linear-gradient(90deg, #1a9cff, #875cff, #ff66b3);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Área dos botões superiores */
+.app-actions {
+  display: flex;
+  gap: 9px;
+}
+
+/* Botões do topo */
+.app-actions button {
+  width: 42px;
+  height: 42px;
+  border: 0;
+  border-radius: 14px;
+  background: rgba(232, 237, 247, 0.95);
+  box-shadow:
+    inset 0 0 0 1px rgba(110, 130, 170, 0.18),
+    0 6px 14px rgba(60, 75, 110, 0.10);
+  font-size: 1.05rem;
+  cursor: pointer;
+  transition: transform 0.18s ease, background 0.18s ease;
+}
+
+/* Efeito estável dos botões */
+.app-actions button:hover {
+  transform: translateY(-2px);
+  background: #ffffff;
+}
+
+/* Linha do link do perfil */
+.profile-link {
+  margin: 18px 0 24px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #168dd9;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+/* Botão pequeno de copiar */
+.profile-link button {
+  margin-left: auto;
+  border: 0;
+  background: transparent;
+  font-size: 1.35rem;
+  cursor: pointer;
+}
+
+/* Card principal colorido */
+.profile-card {
+  position: relative;
+  min-height: 220px;
+  padding: 28px;
+  border-radius: 27px;
+  overflow: hidden;
+  color: #ffffff;
+  background:
+    radial-gradient(circle at 88% 82%, #fff6a3 0%, transparent 28%),
+    radial-gradient(circle at 78% 18%, #50dce3 0%, transparent 34%),
+    radial-gradient(circle at 52% 54%, #ff4e3e 0%, transparent 40%),
+    linear-gradient(135deg, #080406, #7b0906);
+  box-shadow:
+    0 20px 36px rgba(95, 25, 25, 0.28),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.14);
+}
+
+/* Brilho animado dentro do card */
+.profile-card::after {
+  content: "";
+  position: absolute;
+  inset: -45%;
+  background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.20), transparent);
+  transform: rotate(20deg) translateX(-65%);
+  animation: shineMove 4.5s ease-in-out infinite;
+}
+
+/* Nome do perfil */
+.profile-card h2 {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 50px;
+  font-family: "Courier New", monospace;
+  font-size: 2.25rem;
+  letter-spacing: 1px;
+}
+
+/* Lista de contatos dentro do card colorido */
+.contact-list {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 13px;
+}
+
+/* Cada linha de contato */
+.contact-list p {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 1rem;
+}
+
+/* Ícones pequenos de contato */
+.contact-icon {
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  border-radius: 9px;
+  background: rgba(255, 255, 255, 0.92);
+  color: #111827;
+  font-weight: 700;
+}
+
+/* Lista dos links abaixo do card */
+.links-list {
+  margin-top: 24px;
+  display: grid;
+  gap: 15px;
+}
+
+/* Cada box de link */
+.link-item {
+  min-height: 76px;
+  padding: 13px 17px;
+  display: grid;
+  grid-template-columns: 55px 1fr auto;
+  align-items: center;
+  gap: 16px;
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.76);
+  color: #11131a;
+  text-decoration: none;
+  box-shadow: var(--shadow-soft);
+
+  /* Mantém o link estável e evita o bug de ficar “fugindo” do mouse */
+  transform: translateY(0);
+
+  /* Transição visual suave */
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+/* Efeito do link quando passa o mouse */
+.link-item:hover {
+  /* Sobe levemente, mas não anda para o lado */
+  transform: translateY(-3px);
+
+  background: #ffffff;
+  box-shadow: 0 18px 42px rgba(35, 45, 75, 0.22);
+}
+
+/* Efeito quando o usuário clica no link */
+.link-item:active {
+  transform: translateY(-1px) scale(0.99);
+}
+
+/* Ícones dos links */
+.link-icon {
+  width: 47px;
+  height: 47px;
+  display: grid;
+  place-items: center;
+  border-radius: 14px;
+  font-weight: 800;
+  background: #eef2fb;
+  box-shadow:
+    inset 0 0 0 2px rgba(255, 255, 255, 0.85),
+    0 8px 18px rgba(30, 40, 70, 0.12);
+}
+
+/* Ícone do portfólio */
+.portfolio {
+  color: #b36cff;
+}
+
+/* Ícone do Instagram */
+.instagram {
+  color: #e84296;
+}
+
+/* Ícone do GitHub */
+.github {
+  color: #ffffff;
+  background: #111827;
+}
+
+/* Ícone do LinkedIn */
+.linkedin {
+  color: #ffffff;
+  background: #0a66c2;
+}
+
+/* Ícone do YouTube */
+.youtube {
+  color: #ffffff;
+  background: #ff0033;
+}
+
+/* Seta da direita */
+.arrow {
+  color: #8b91a1;
+  font-size: 1.55rem;
+}
+
+/* Animação flutuante do celular */
+@keyframes phoneFloat {
+  0%, 100% {
+    transform: translateY(0) rotateX(0deg) rotateY(0deg);
+  }
+
+  50% {
+    transform: translateY(-8px) rotateX(0.7deg) rotateY(-0.7deg);
+  }
+}
+
+/* Animação de brilho do card */
+@keyframes shineMove {
+  0%, 100% {
+    transform: rotate(20deg) translateX(-65%);
+  }
+
+  50% {
+    transform: rotate(20deg) translateX(65%);
+  }
+}
+
+/* Ajuste para telas médias e celulares */
+@media (max-width: 900px) {
+  .page {
+    grid-template-columns: 1fr;
+    padding: 42px 0;
+    gap: 36px;
+  }
+
+  .intro {
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .phone {
+    margin: 0 auto;
+  }
+}
+
+/* Ajuste extra para celular real pequeno */
+@media (max-width: 500px) {
+  .phone {
+    width: min(420px, 96vw);
+    min-height: auto;
+    padding: 12px;
+    border-radius: 50px;
+  }
+
+  .screen {
+    min-height: auto;
+    padding: 34px 18px 24px;
+    border-radius: 38px;
+  }
+
+  .logo {
+    font-size: 2.45rem;
+  }
+
+  .app-actions button {
+    width: 36px;
+    height: 36px;
+  }
+
+  .profile-card h2 {
+    font-size: 1.8rem;
+  }
+
+  .link-item {
+    grid-template-columns: 48px 1fr auto;
+  }
+}
