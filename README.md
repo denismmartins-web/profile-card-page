@@ -40,5 +40,5 @@ Neste projeto pratiquei:
 
 Acesse o projeto publicado:
 
-https://SEU-USUARIO.github.io/profile-card-page/
+https://denismmartins-web.github.io/profile-card-page/#
 
