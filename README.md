@@ -1,44 +1,80 @@
-# profile-card-page
-Card de perfil apresentável, Criação de página estática.
-
 # Profile Card Page
 
-Página estática de card de perfil em formato de celular, criada com HTML, CSS e JavaScript.
+Página estática de card de perfil em formato de celular, criada com HTML, CSS, JavaScript e assets SVG.
 
-## Objetivo do projeto
+## Link do projeto
 
-Este projeto foi desenvolvido como parte do meu aprendizado em desenvolvimento web, GitHub e GitHub Pages.
+Acesse o projeto publicado pelo GitHub Pages:
 
-A proposta é criar uma página visual de apresentação pessoal, simulando um card de perfil dentro de um celular, com efeitos visuais e interação com o mouse.
+https://denismmartins-web.github.io/profile-card-page/#
+
+## Objetivo
+
+O objetivo deste projeto foi praticar a criação de uma página estática visualmente apresentável, simulando um card de perfil dentro de um celular.
+
+Além da parte visual, o projeto também serviu como prática de GitHub, versionamento, branches, commits, Pull Requests, merge e publicação com GitHub Pages.
 
 ## Tecnologias utilizadas
 
 * HTML5
 * CSS3
 * JavaScript
+* SVG
 * GitHub Pages
 
 ## Funcionalidades
 
-* Layout de card de perfil
-* Simulação visual de celular
-* Efeito de movimento com o mouse
-* Links de redes sociais
-* Página publicada com GitHub Pages
+* Layout de profile card em formato de celular
+* Efeito visual de movimento com o cursor
+* Horário dinâmico atualizado com JavaScript
+* Links externos para redes sociais
+* Ícones SVG organizados na pasta `assets`
+* Publicação online com GitHub Pages
 
-## Aprendizados
+## Estrutura do projeto
+
+```txt
+profile-card-page/
+├── index.html
+├── style.css
+├── script.js
+├── README.md
+└── assets/
+    ├── github.svg
+    ├── instagram.svg
+    ├── linkedin.svg
+    └── youtube.svg
+```
+
+## Aprendizados praticados
 
 Neste projeto pratiquei:
 
-* Estrutura básica de uma página estática
-* Separação entre HTML, CSS e JavaScript
-* Publicação com GitHub Pages
-* Criação de commits no GitHub
-* Organização inicial de um projeto para portfólio
+* Separação entre estrutura, estilo e comportamento
+* Uso de arquivos externos de CSS e JavaScript
+* Organização de imagens e ícones em uma pasta `assets`
+* Uso de caminhos relativos, como `assets/github.svg`
+* Criação e edição de branches
+* Commits com mensagens mais organizadas
+* Pull Request para revisar alterações antes de unir à `main`
+* Merge e Squash and Merge
+* Resolução de conflito de merge
+* Correção de bugs usando branch específica
+* Testes em diferentes navegadores
+* Publicação de página estática com GitHub Pages
 
-## Link do projeto
+## Processo de evolução
 
-Acesse o projeto publicado:
+O projeto começou como uma página visual simples e foi evoluindo em etapas:
 
-https://denismmartins-web.github.io/profile-card-page/#
+1. Criação da primeira versão do card
+2. Melhoria visual do layout
+3. Adição de arquivos SVG na pasta `assets`
+4. Inclusão de links reais para redes sociais
+5. Implementação de horário dinâmico com JavaScript
+6. Correção de compatibilidade dos links entre navegadores
+7. Publicação final com GitHub Pages
 
+## Observação
+
+Este projeto faz parte da minha trilha de aprendizado em desenvolvimento web, GitHub e construção de portfólio.
