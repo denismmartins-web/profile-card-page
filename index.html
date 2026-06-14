@@ -1,46 +1,46 @@
 <!DOCTYPE html>
-<!-- Define que o documento usa HTML5 -->
+<!-- Define que este arquivo usa HTML5 -->
 
 <html lang="pt-BR">
 <!-- Define o idioma principal da página como português do Brasil -->
 
 <head>
-  <!-- Configura a codificação dos caracteres para aceitar acentos -->
+  <!-- Permite o uso correto de acentos e caracteres especiais -->
   <meta charset="UTF-8" />
 
-  <!-- Faz a página se adaptar corretamente em celular, tablet e computador -->
+  <!-- Faz a página se adaptar a telas de celular, tablet e computador -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- Título que aparece na aba do navegador -->
-  <title>Pʀᴏғɪʟᴇ Cᴀʀᴅ Pᴀɢᴇ</title>
+  <title>Profile Card Page</title>
 
-  <!-- Importa o arquivo CSS externo responsável pelo visual da página -->
+  <!-- Importa o arquivo CSS responsável pelo visual da página -->
   <link rel="stylesheet" href="style.css" />
 
-  <!-- Importa o JavaScript externo com defer para carregar depois do HTML -->
+  <!-- Importa o JavaScript com defer para carregar depois do HTML -->
   <script src="script.js" defer></script>
 </head>
 
 <body>
   <!-- Área principal da página -->
   <main class="page">
-    
-    <!-- Texto lateral/introdução do projeto -->
+
+    <!-- Bloco de apresentação lateral do projeto -->
     <section class="intro">
       <p class="intro__tag">Projeto 02 • GitHub Pages</p>
 
-      <h1>Pʀᴏғɪʟᴇ Cᴀʀᴅ Pᴀɢᴇ</h1>
+      <h1>Profile Card Page</h1>
 
       <p>
         Uma página estática inspirada em um card de perfil dentro de um celular,
-        criada com HTML, CSS e JavaScript.
+        criada com HTML, CSS, JavaScript e assets SVG.
       </p>
     </section>
 
-    <!-- Celular principal: o JavaScript usa o id="phone" para aplicar o efeito de movimento -->
+    <!-- Estrutura principal do celular -->
     <section class="phone" id="phone" aria-label="Celular com card de perfil">
-      
-      <!-- Parte superior preta do celular, simulando a câmera/dynamic island -->
+
+      <!-- Parte superior preta do celular, simulando câmera/dynamic island -->
       <div class="phone__island"></div>
 
       <!-- Tela interna do celular -->
@@ -48,20 +48,20 @@
 
         <!-- Barra superior com horário e ícones simples -->
         <header class="status-bar">
-          
           <!-- O JavaScript vai atualizar este horário automaticamente -->
           <span id="current-time">--:--</span>
 
-           <div class="status-bar__icons">
+          <!-- Ícones decorativos de status -->
+          <div class="status-bar__icons">
             <span>●</span>
             <span>⌁</span>
             <span>▰</span>
           </div>
         </header>
 
-        <!-- Cabeçalho do aplicativo dentro do celular -->
+        <!-- Cabeçalho interno do aplicativo/card -->
         <section class="app-header">
-          <h2 class="logo">𝘾 𝙖 𝙧 𝙙</h2>
+          <h2 class="logo">Card</h2>
 
           <!-- Botões decorativos do topo -->
           <nav class="app-actions" aria-label="Ações do card">
@@ -72,27 +72,27 @@
           </nav>
         </section>
 
-        <!-- Linha com link fictício do perfil -->
+        <!-- Link visual do card, apenas decorativo por enquanto -->
         <p class="profile-link">
           <span>🌐</span>
-          cards.profile/Denis_Martins
+          card.cards/Denis_Martins
           <button type="button" aria-label="Copiar link">⧉</button>
         </p>
 
         <!-- Card colorido principal -->
         <article class="profile-card">
-          <h2>𝓓𝓮𝓷𝓲𝓼 𝓜𝓪𝓻𝓽𝓲𝓷𝓼</h2>
+          <h2>Denis Martins</h2>
 
-          <!-- Lista de contatos principais -->
+          <!-- Lista de contatos principais dentro do card -->
           <div class="contact-list">
             <p>
               <span class="contact-icon">☎</span>
-              <span>(11) 97495-0063</span>
+              <span>(11) 99999-9999</span>
             </p>
 
             <p>
               <span class="contact-icon">✉</span>
-              <span>denis.dm@hotmail.com</span>
+              <span>denis@email.com</span>
             </p>
 
             <p>
@@ -102,65 +102,82 @@
           </div>
         </article>
 
-  <!-- Lista de links do perfil -->
-<section class="links-list" aria-label="Links do perfil">
+        <!-- Lista de links do perfil -->
+        <section class="links-list" aria-label="Links do perfil">
 
-  <!-- Link do portfólio: por enquanto fica sem link real, pois faremos uma página de portfólio futuramente -->
-  <a href="#" class="link-item">
-    <span class="link-icon portfolio">
-      ◇
-    </span>
+          <!-- Link do portfólio: ficará com link real quando criarmos o portfólio central -->
+          <a href="#" class="link-item">
+            <span class="link-icon portfolio">
+              ◇
+            </span>
 
-    <strong>Meu Portfólio</strong>
+            <strong>Meu Portfólio</strong>
 
-    <span class="arrow">›</span>
-  </a>
+            <span class="arrow">›</span>
+          </a>
 
-  <!-- Link real do Instagram -->
-  <a href="https://www.instagram.com/dm.denis/" class="link-item" target="_blank" rel="noopener noreferrer">
-    <span class="link-icon">
-      <img src="assets/instagram.svg" alt="Ícone do Instagram">
-    </span>
+          <!-- Link real do Instagram -->
+          <a
+            href="https://www.instagram.com/dm.denis/"
+            class="link-item"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span class="link-icon">
+              <img src="assets/instagram.svg" alt="Ícone do Instagram">
+            </span>
 
-    <strong>Instagram</strong>
+            <strong>Instagram</strong>
 
-    <span class="arrow">›</span>
-  </a>
+            <span class="arrow">›</span>
+          </a>
 
-  <!-- Link real do GitHub -->
-  <a href="https://github.com/denismmartins-web" class="link-item" target="_blank" rel="noopener noreferrer">
-    <span class="link-icon">
-      <img src="assets/github.svg" alt="Ícone do GitHub">
-    </span>
+          <!-- Link real do GitHub -->
+          <a
+            href="https://github.com/denismmartins-web"
+            class="link-item"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span class="link-icon">
+              <img src="assets/github.svg" alt="Ícone do GitHub">
+            </span>
 
-    <strong>GitHub</strong>
+            <strong>GitHub</strong>
 
-    <span class="arrow">›</span>
-  </a>
+            <span class="arrow">›</span>
+          </a>
 
-  <!-- LinkedIn ainda ficará sem link real até você me passar seu perfil -->
-  <a href="#" class="link-item">
-    <span class="link-icon">
-      <img src="assets/linkedin.svg" alt="Ícone do LinkedIn">
-    </span>
+          <!-- LinkedIn temporário: fica sem link real até você passar seu perfil -->
+          <a href="#" class="link-item">
+            <span class="link-icon">
+              <img src="assets/linkedin.svg" alt="Ícone do LinkedIn">
+            </span>
 
-    <strong>LinkedIn</strong>
+            <strong>LinkedIn</strong>
 
-    <span class="arrow">›</span>
-  </a>
+            <span class="arrow">›</span>
+          </a>
 
-  <!-- Link real do YouTube -->
-  <a href="https://www.youtube.com/@Gring010" class="link-item" target="_blank" rel="noopener noreferrer">
-    <span class="link-icon">
-      <img src="assets/youtube.svg" alt="Ícone do YouTube">
-    </span>
+          <!-- Link real do YouTube -->
+          <a
+            href="https://www.youtube.com/@Gring010"
+            class="link-item"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span class="link-icon">
+              <img src="assets/youtube.svg" alt="Ícone do YouTube">
+            </span>
 
-    <strong>YouTube</strong>
+            <strong>YouTube</strong>
 
-     <span class="arrow">›</span>
-     </a>
-     </section>
- 
+            <span class="arrow">›</span>
+          </a>
+        </section>
+      </div>
+    </section>
   </main>
 </body>
+
 </html>

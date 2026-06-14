@@ -1,0 +1,24 @@
+<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Fundo com gradiente simulando o estilo do Instagram -->
+  <rect width="48" height="48" rx="14" fill="url(#instagramGradient)" />
+
+  <!-- Moldura da câmera -->
+  <rect x="13" y="13" width="22" height="22" rx="7" stroke="white" stroke-width="3" />
+
+  <!-- Círculo central da câmera -->
+  <circle cx="24" cy="24" r="6" stroke="white" stroke-width="3" />
+
+  <!-- Bolinha pequena do canto superior -->
+  <circle cx="31.5" cy="16.5" r="2" fill="white" />
+
+  <!-- Definição do gradiente usado no fundo -->
+  <defs>
+    <linearGradient id="instagramGradient" x1="5" y1="43" x2="43" y2="5" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FEDA75" />
+      <stop offset="0.25" stop-color="#FA7E1E" />
+      <stop offset="0.5" stop-color="#D62976" />
+      <stop offset="0.75" stop-color="#962FBF" />
+      <stop offset="1" stop-color="#4F5BD5" />
+    </linearGradient>
+  </defs>
+</svg>

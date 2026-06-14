@@ -462,8 +462,8 @@ body {
 
 /* 
   Ícones dos links:
-  Por enquanto são feitos com texto/CSS.
-  Depois podemos trocar por SVG real dentro da pasta assets.
+  Agora usamos imagens SVG dentro da pasta assets.
+  O span funciona como a "caixa" do ícone.
 */
 .link-icon {
   width: 47px;
@@ -471,8 +471,7 @@ body {
   display: grid;
   place-items: center;
   border-radius: 15px;
-  font-weight: 800;
-  font-size: 0.9rem;
+  overflow: hidden;
   background: #eef2fb;
   box-shadow:
     inset 0 0 0 2px rgba(255, 255, 255, 0.85),
@@ -480,46 +479,25 @@ body {
 }
 
 /* 
-  Cor do ícone de portfólio.
+  Imagem SVG dentro da caixa do ícone:
+  Faz o SVG ocupar todo o espaço sem distorcer.
+*/
+.link-icon img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+/* 
+  Ícone do portfólio:
+  Continua como símbolo temporário até criarmos o site central de portfólio.
 */
 .portfolio {
   color: #b36cff;
+  font-weight: 800;
+  font-size: 1.3rem;
 }
-
-/* 
-  Cor do ícone do Instagram.
-*/
-.instagram {
-  color: #ffffff;
-  background:
-    radial-gradient(circle at 30% 105%, #feda75 0%, #fa7e1e 28%, transparent 42%),
-    linear-gradient(135deg, #405de6, #833ab4, #e1306c, #fd1d1d);
-}
-
-/* 
-  Cor do ícone do GitHub.
-*/
-.github {
-  color: #ffffff;
-  background: #111827;
-}
-
-/* 
-  Cor do ícone do LinkedIn.
-*/
-.linkedin {
-  color: #ffffff;
-  background: #0a66c2;
-}
-
-/* 
-  Cor do ícone do YouTube.
-*/
-.youtube {
-  color: #ffffff;
-  background: #ff0033;
-}
-
 /* 
   Seta no lado direito dos links.
 */
