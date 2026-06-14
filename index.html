@@ -48,9 +48,11 @@
 
         <!-- Barra superior com horário e ícones simples -->
         <header class="status-bar">
-          <span>12:20</span>
+          
+          <!-- O JavaScript vai atualizar este horário automaticamente -->
+          <span id="current-time">--:--</span>
 
-          <div class="status-bar__icons">
+           <div class="status-bar__icons">
             <span>●</span>
             <span>⌁</span>
             <span>▰</span>
@@ -100,36 +102,65 @@
           </div>
         </article>
 
-        <!-- Lista de links do perfil -->
-        <section class="links-list" aria-label="Links do perfil">
+  <!-- Lista de links do perfil -->
+<section class="links-list" aria-label="Links do perfil">
 
-          <!-- Cada item é um link. Depois você pode trocar o href="#" pelo link real -->
-          <a href="#" class="link-item">
-            <span class="link-icon portfolio">◇</span>
-            <strong>Meu Portfólio</strong>
-            <span class="arrow">›</span>
-          </a>
+  <!-- Link do portfólio: por enquanto fica sem link real, pois faremos uma página de portfólio futuramente -->
+  <a href="#" class="link-item">
+    <span class="link-icon portfolio">
+      ◇
+    </span>
 
-          <a href="#" class="link-item">
-            <span class="link-icon instagram">IG</span>
-            <strong>@dm.denis</strong>
-            <span class="arrow">›</span>
-          </a>
+    <strong>Meu Portfólio</strong>
 
-          <a href="https://github.com/denismmartins-web" class="link-item">
-            <span class="link-icon github">GH</span>
-            <strong>GitHub</strong>
-            <span class="arrow">›</span>
-          </a>
+    <span class="arrow">›</span>
+  </a>
 
-          <a href="https://www.youtube.com/@Gring010" class="link-item">
-            <span class="link-icon youtube">YT</span>
-            <strong>YouTube</strong>
-            <span class="arrow">›</span>
-          </a>
-        </section>
-      </div>
-    </section>
+  <!-- Link real do Instagram -->
+  <a href="https://www.instagram.com/dm.denis/" class="link-item" target="_blank" rel="noopener noreferrer">
+    <span class="link-icon">
+      <img src="assets/instagram.svg" alt="Ícone do Instagram">
+    </span>
+
+    <strong>Instagram</strong>
+
+    <span class="arrow">›</span>
+  </a>
+
+  <!-- Link real do GitHub -->
+  <a href="https://github.com/denismmartins-web" class="link-item" target="_blank" rel="noopener noreferrer">
+    <span class="link-icon">
+      <img src="assets/github.svg" alt="Ícone do GitHub">
+    </span>
+
+    <strong>GitHub</strong>
+
+    <span class="arrow">›</span>
+  </a>
+
+  <!-- LinkedIn ainda ficará sem link real até você me passar seu perfil -->
+  <a href="#" class="link-item">
+    <span class="link-icon">
+      <img src="assets/linkedin.svg" alt="Ícone do LinkedIn">
+    </span>
+
+    <strong>LinkedIn</strong>
+
+    <span class="arrow">›</span>
+  </a>
+
+  <!-- Link real do YouTube -->
+  <a href="https://www.youtube.com/@Gring010" class="link-item" target="_blank" rel="noopener noreferrer">
+    <span class="link-icon">
+      <img src="assets/youtube.svg" alt="Ícone do YouTube">
+    </span>
+
+    <strong>YouTube</strong>
+
+     <span class="arrow">›</span>
+     </a>
+     </section>
+ 
   </main>
 </body>
 </html>
