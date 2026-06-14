@@ -462,8 +462,8 @@ body {
 
 /* 
   Ícones dos links:
-  Agora o projeto usa arquivos SVG dentro da pasta assets.
-  O span continua sendo a "caixa", e a imagem SVG fica dentro dele.
+  Agora usamos imagens SVG dentro da pasta assets.
+  O span funciona como a "caixa" do ícone.
 */
 .link-icon {
   width: 47px;
@@ -479,8 +479,8 @@ body {
 }
 
 /* 
-  Imagens SVG dentro dos ícones:
-  Faz o SVG ocupar toda a caixa sem distorcer.
+  Imagem SVG dentro da caixa do ícone:
+  Faz o SVG ocupar todo o espaço sem distorcer.
 */
 .link-icon img {
   width: 100%;
@@ -491,7 +491,7 @@ body {
 
 /* 
   Ícone do portfólio:
-  Continua sendo texto/símbolo porque ainda não criamos um SVG para ele.
+  Continua como símbolo temporário até criarmos o site central de portfólio.
 */
 .portfolio {
   color: #b36cff;
