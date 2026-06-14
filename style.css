@@ -418,9 +418,11 @@ body {
 
 /* 
   Cada link da lista:
-  Mantemos o elemento estável para evitar o bug do hover.
+  Mantemos o elemento estável para evitar bug no hover.
 */
 .link-item {
+  position: relative;
+  z-index: 2;
   min-height: 76px;
   padding: 13px 17px;
   display: grid;
@@ -432,15 +434,25 @@ body {
   color: #11131a;
   text-decoration: none;
   box-shadow: var(--shadow-soft);
-
-  /* Importante: não mover o link para o lado evita flicker/bug no cursor */
+  cursor: pointer;
   transform: translateY(0);
-
   transition:
     transform 0.2s ease,
     box-shadow 0.2s ease,
     background 0.2s ease;
 }
+
+/* 
+  Evita que imagem, texto ou seta capturem o clique.
+  Assim o clique sempre pertence ao link <a>.
+*/
+.link-item img,
+.link-item strong,
+.link-item .arrow,
+.link-item .link-icon {
+  pointer-events: none;
+}
+
 
 /* 
   Hover dos links:
