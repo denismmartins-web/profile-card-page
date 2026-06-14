@@ -605,3 +605,52 @@ body {
     grid-template-columns: 48px 1fr auto;
   }
 }
+
+/* 
+  Correção de compatibilidade dos links:
+  Este bloco força os botões de links a ficarem acima das camadas decorativas
+  e garante que a área inteira do card seja clicável em Chrome, Edge e Firefox.
+*/
+
+/* Cria um contexto de camadas controlado dentro da tela do celular */
+.screen {
+  position: relative;
+  isolation: isolate;
+}
+
+/* Garante que elementos decorativos não capturem clique */
+.phone::before,
+.phone::after,
+.phone__island,
+.profile-card::after {
+  pointer-events: none;
+}
+
+/* Mantém o card principal abaixo da lista de links */
+.profile-card {
+  position: relative;
+  z-index: 1;
+}
+
+/* Coloca a lista de links acima dos elementos visuais */
+.links-list {
+  position: relative;
+  z-index: 20;
+}
+
+/* Garante que cada botão seja clicável por inteiro */
+.link-item {
+  position: relative;
+  z-index: 30;
+  width: 100%;
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+/* 
+  Faz o clique pertencer ao <a class="link-item">.
+  Assim imagem, texto e seta não bloqueiam a interação do link.
+*/
+.link-item * {
+  pointer-events: none;
+}
