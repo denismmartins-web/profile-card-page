@@ -42,8 +42,9 @@ profile-card-page/
 └── assets/
     ├── github.svg
     ├── instagram.svg
-    ├── linkedin.svg
-    └── youtube.svg
+    ├── ( linkedin.svg ) - Desativado.
+    ├── youtube.svg  
+    └── mercado-livre.svg
 ```
 
 ## Aprendizados praticados
