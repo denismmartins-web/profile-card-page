@@ -79,3 +79,6 @@ O projeto começou como uma página visual simples e foi evoluindo em etapas:
 ## Observação
 
 Este projeto faz parte da minha trilha de aprendizado em desenvolvimento web, GitHub e construção de portfólio.
+
+
+<img alt="github contribution grid snake animation" src="https://raw.githubusercontent.com/7oSkaaa/7oSkaaa/output/github-contribution-grid-snake.svg" style="visibility: visible; max-width: 100%;">
